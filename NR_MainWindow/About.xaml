@@ -1,0 +1,37 @@
+﻿<Window x:Class="NR_MainWindow.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NR_MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Title="MainWindow" Height="550" Width="600" Background="Transparent" Foreground="#FFFFFF" >
+    <Grid>
+        <Border  Background="{DynamicResource SecondaryColor}" BorderThickness="0" CornerRadius="10" MouseLeftButtonDown="Border_MouseLeftButtonDown"></Border>
+        <Button Margin="10" Style="{StaticResource DefaultButtons}" VerticalAlignment="Top" HorizontalAlignment="Right" Background="#EE3838" Click="CloseButton_Click"></Button>
+        <StackPanel>
+            <TextBlock x:Name="tbName" HorizontalAlignment="Center" TextAlignment="Center" Margin="0 20" FontSize="24" Width="500" TextWrapping="Wrap" FontWeight="SemiBold" />
+            <TextBlock Margin="30 0" HorizontalAlignment="Center" x:Name="tbPrice" />
+            <ScrollViewer Style="{StaticResource MaterialDesignScrollViewer}"  Height="300" HorizontalAlignment="Center" Width="450" VerticalScrollBarVisibility="Hidden">
+                <TextBlock  x:Name="tbDesc" TextWrapping="Wrap" Margin="30" FontWeight="Medium" FontSize="16"  />
+            </ScrollViewer>
+            <Grid Margin="70 20">
+                <Button HorizontalAlignment="Left" Style="{StaticResource MaterialDesignToolForegroundButton}" Content="Вернуться назад" Click="CloseButton_Click"></Button>
+                <Button  x:Name="btAdd" HorizontalAlignment="Right" Background="{DynamicResource PrimaryColor}"  Foreground="#fff"  BorderThickness="0" Content="Перейти на сайт" Padding="19 10" FontWeight="SemiBold" Click="btAbout_Click">
+                    <Button.Style>
+                        <Style>
+                            <Style.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10" />
+                                </Style>
+                            </Style.Resources>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
